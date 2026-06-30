@@ -131,17 +131,17 @@ with col1:
     fig = go.Figure()
     fig.add_trace(go.Scatter(x=v_data, y=i_data, mode='lines', name=material, line=dict(color='#FF4B4B', width=3)))
     
-    fig.update_layout(
-        xaxis_title="Applied Bias Voltage (V)",
-        yaxis_title="Diode Current (A)",
-        xaxis=dict(range=[-5.5, 1.0], zeroline=True, zeroimagename="black"),
-        yaxis=dict(range=[-0.01, 0.05], zeroline=True, zeroimagename="black"),
+    # Direct dictionary assignment bypasses the update_layout() dict-unpacking bug in Python 3.14
+    fig.layout = go.Layout(
+        title="P-N Junction I-V Characteristics Curve",
+        xaxis=dict(title="Applied Bias Voltage (V)", range=[-5.5, 1.0], zeroline=True, zerolinecolor="gray"),
+        yaxis=dict(title="Diode Current (A)", range=[-0.01, 0.05], zeroline=True, zerolinecolor="gray"),
         template="plotly_dark",
-        margin=dict(l=20, r=20, t=20, b=20),
+        margin=dict(l=20, r=20, t=40, b=20),
         height=450
     )
     st.plotly_chart(fig, use_container_width=True)
-
+  
 with col2:
     st.subheader("📋 Virtual Instrument Readout")
     st.markdown("Calculated theoretical properties computed by the Physics engine logic:")
