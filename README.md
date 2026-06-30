@@ -2,9 +2,6 @@
 
 An interactive, web-based virtual laboratory application designed for Higher National Diploma (HND) Physics and Electronics programs. This platform serves as a software-defined laboratory instrument (simulating a digital curve tracer/oscilloscope) to model solid-state semiconductor components under varying conditions while actively tracking student pedagogical metrics.
 
-## 🚀 Live Demo
-[Insert your live Streamlit Community Cloud URL here once deployed]
-
 ---
 
 ## 📌 Project Overview
