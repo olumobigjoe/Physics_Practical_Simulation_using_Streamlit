@@ -173,6 +173,7 @@ with st.form("quiz_form"):
     )
     
     submitted = st.form_submit_form("Submit Practical Evaluation Answers")
+    st.form_submit_button()
     
     if submitted:
         st.session_state['quiz_submitted'] = True
