@@ -80,6 +80,7 @@ if st.sidebar.button("Log Current Parameter Calibration"):
     details = f"Material: {material}, Temp: {temp_celsius}°C, Doping: {doping_concentration}"
     log_user_action(st.session_state['student_id'], "Parameter_Calibration", details)
     st.sidebar.success("Telemetry telemetry stored!")
+st.form_submit_button()
 
 # --- CORE MATHEMATICAL PHYSICS SIMULATION ENGINE ---
 def simulate_pn_junction(material, temp_c, doping):
@@ -173,8 +174,7 @@ with st.form("quiz_form"):
     )
     
     submitted = st.form_submit_form("Submit Practical Evaluation Answers")
-    st.form_submit_button()
-    
+        
     if submitted:
         st.session_state['quiz_submitted'] = True
         score = 0
