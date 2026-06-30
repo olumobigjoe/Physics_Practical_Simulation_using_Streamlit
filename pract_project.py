@@ -80,7 +80,6 @@ if st.sidebar.button("Log Current Parameter Calibration"):
     details = f"Material: {material}, Temp: {temp_celsius}°C, Doping: {doping_concentration}"
     log_user_action(st.session_state['student_id'], "Parameter_Calibration", details)
     st.sidebar.success("Telemetry telemetry stored!")
-st.form_submit_button()
 
 # --- CORE MATHEMATICAL PHYSICS SIMULATION ENGINE ---
 def simulate_pn_junction(material, temp_c, doping):
@@ -172,7 +171,7 @@ with st.form("quiz_form"):
         "2. Which material exhibits a lower forward barrier turn-on (knee) potential during active forward biasing?",
         ["Silicon (Si)", "Germanium (Ge)", "Both trigger conductivity profiles symmetrically at 0.7V."]
     )
-    
+st.form_submit_button()    
     submitted = st.form_submit_form("Submit Practical Evaluation Answers")
         
     if submitted:
